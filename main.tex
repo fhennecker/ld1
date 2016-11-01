@@ -14,7 +14,7 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{multirow}
-
+\usepackage[table]{xcolor}
 \title{
     Assignment 1 : Game Theory\\
     \small INFO-F-409 - Learning Dynamics
@@ -85,4 +85,50 @@ display when the column (resp. row) player escalates with a probability $q$
    %  \cline{2-3} & 3 & 4 \\
 % \end{tabular}
 
+\section{Which social dilemma?}
+Let us first find player 1's best responses (highlighted in red) :\\ 
+\begin{table}[H]
+\begin{tabular}{c|c|c|c|c|c|c|c|c}
+	& (C,C,C) & (C,C,D) & (C,D,C) & (C,D,D)
+	& (D,C,C) & (D,C,D) & (D,D,C) & (D,D,D)\\
+	\hline
+	C & $\frac{1}{3} * (2 + 5 + 2 ) = 3 $ &
+		\cellcolor{red!25} $\frac{8}{3}$ &$\frac{4}{3}$ & 1 &
+		$\frac{7}{3}$ & 2 & $\cellcolor{red!25} \frac{2}{3}$ &
+		$\frac{1}{3}$ \\
+	\hline
+	D & \cellcolor{red!25} 4 & $\frac{7}{3}$ & 
+		\cellcolor{red!25} $\frac{11}{3}$ & \cellcolor{red!25} 2
+		& \cellcolor{red!25} $\frac{8}{3}$ & \cellcolor{red!25} 3 
+		& \cellcolor{red!25} $\frac{2}{3}$ & 
+		$\cellcolor{red!25} \frac{2}{3}$ \\
+\end{tabular}
+\end{table}
+
+These are player 2's best responses :\\
+\begin{table}[H]
+\begin{tabular}{c|c|c|}
+	& \textbf{C} & \textbf{D}\\
+	\hline
+	\textbf{C} & 2,2 & \cellcolor{red!25} 0,5 \\
+	\hline
+	\textbf{D} & 5,0 & \cellcolor{red!25} 1,1 \\
+\end{tabular}
+\hfill
+\begin{tabular}{c|c|c|}
+	& \textbf{C} & \textbf{D}\\
+	\hline
+	\textbf{C} & \cellcolor{red!25} 5,5 & 0,2 \\
+	\hline
+	\textbf{D} & 2,0 & \cellcolor{red!25} 1,1 \\
+\end{tabular}
+\hfill
+\begin{tabular}{c|c|c|}
+	& \textbf{C} & \textbf{D}\\
+	\hline
+	\textbf{C} & 2,2 & \cellcolor{red!25} 1,5 \\
+	\hline
+	\textbf{D} & \cellcolor{red!25} 5,1 & 0,0 \\
+\end{tabular}
+\end{table}
 \end{document}
