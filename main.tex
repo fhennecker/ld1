@@ -45,7 +45,8 @@ in a more standard way :
 \end{tabular}
 \end{table}
 
-For the row player, when are the payoffs for each strategy equal?
+\paragraph{1} For the row player, when are the expected payoffs for each 
+strategy equal?
 $$ q\frac{V-D}{2} + (1-q)*V = q*0 + (1-q)*(\frac{V}{2}-T) $$
 $$ q\frac{V-D}{2}+V-qV = \frac{V}{2}-T -q\frac{V}{2} + qT $$
 $$ (\frac{V-D}{2} - V + \frac{V}{2} - T)q + V - \frac{V}{2} + T = 0 $$
@@ -55,6 +56,30 @@ $$ q = \frac{-V-2T}{-D-2T} $$
 The development is the same for the column player so :
 $$ p = \frac{-V-2T}{-D-2T} $$
 
+We can assume that $V$, $D$ and $T$ are positive. This means that :
+\begin{itemize}
+	\item \textbf{for any given $T$}, \begin{itemize}
+			\item if $V = D$ : $p = q = 1$, so there is a pure 
+				strategy nash equilibrium in (Escalate,
+				Escalate).
+			\item if $V > D$ : $ p = q > 1 $, so there is a pure
+				strategy nash equilibrium in (Escalate, 
+				Escalate).
+		\end{itemize}	
+	\item if $V < D$ : $ 0 < p = q < 1 $, there is a mixed strategy Nash
+		equilibrium in \\
+		$\{( \frac{-V-2T}{-D-2T}, 1-\frac{-V-2T}{-D-2T}), 
+		( \frac{-V-2T}{-D-2T}, 1-\frac{-V-2T}{-D-2T})\}$. 
+\end{itemize}
+
+\paragraph{2} Displaying becomes more beneficial than escalating for the
+row player when : 
+$$ 0*q + (\frac{V}{2} - T) (1-q) > q\frac{V-D}{2} + (1-q)*V$$
+so, if we refer to the previous development : 
+$$ q <  \frac{-V-2T}{-D-2T} $$ 
+which means that it is more beneficial for the row (resp. column) player to 
+display when the column (resp. row) player escalates with a probability $q$
+(resp. $p$) lower than $\frac{-V-2T}{-D-2T}$. 
 
 % \begin{tabular}{c|c|c}
 % 	& \multicolumn{2}{c}Display} \\
