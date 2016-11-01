@@ -1,0 +1,66 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{fullpage}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{upgreek}
+\usepackage{color}
+\usepackage[]{algorithm2e}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{multirow}
+
+\title{
+    Assignment 1 : Game Theory\\
+    \small INFO-F-409 - Learning Dynamics
+}
+\author{Florentin \bsc{Hennecker} (ULB 000382078)}
+\date{}
+
+
+\begin{document}
+\maketitle
+
+\section{The Hawk-Dove game}
+Let's assume that the row player escalates with probability $p$ and that it 
+displays with probability $1-p$. Similarly, the column player escalates with 
+probability $q$ and it displays with probability $1-q$. We can view the game
+in a more standard way :
+
+\begin{table}[H]
+\begin{tabular}{c|c|c|c}
+	& & \multicolumn{2}{c}{\textbf{Column player}} \\
+	\hline
+	& & Escalate $q$ & Display $1-q$ \\
+	\textbf{Row player} & Escalate $p$ & 
+		$\frac{V-D}{2}$\textbackslash$\frac{V-D}{2}$ & 
+		V \textbackslash $0$\\
+	\cline{2-3} & Display $1-p$ & $0$ \textbackslash $V$ &
+		$\frac{V}{2}-T$ \textbackslash $\frac{V}{2}-T$\\
+\end{tabular}
+\end{table}
+
+For the row player, when are the payoffs for each strategy equal?
+$$ q\frac{V-D}{2} + (1-q)*V = q*0 + (1-q)*(\frac{V}{2}-T) $$
+$$ q\frac{V-D}{2}+V-qV = \frac{V}{2}-T -q\frac{V}{2} + qT $$
+$$ (\frac{V-D}{2} - V + \frac{V}{2} - T)q + V - \frac{V}{2} + T = 0 $$
+$$ (-D-2T)q + V+2T = 0 $$
+$$ q = \frac{-V-2T}{-D-2T} $$
+
+The development is the same for the column player so :
+$$ p = \frac{-V-2T}{-D-2T} $$
+
+
+% \begin{tabular}{c|c|c}
+% 	& \multicolumn{2}{c}Display} \\
+ %    \hline
+  %%    Escalate & 1 & 2 \\
+   %  \cline{2-3} & 3 & 4 \\
+% \end{tabular}
+
+\end{document}
