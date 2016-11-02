@@ -131,4 +131,75 @@ These are player 2's best responses :\\
 	\textbf{D} & \cellcolor{red!25} 5,1 & 0,0 \\
 \end{tabular}
 \end{table}
+
+From these best responses we can deduct the Bayesian Nash equilibrium
+(D,(D,D,C))
+
+\section{Sequential truel}
+\begin{figure}
+	\includegraphics[width=\textwidth]{gametree.pdf}
+	\caption{The sequential truel game tree}
+\end{figure}
+
+Let us analyse all the different accuracy cases. We will only discuss the black
+arrows of figure 1 since the green arrows indicate there is no choice and the
+orange arrows indicate the player selects a choice with 50\% chance.
+
+\paragraph{If $p_a > p_b > p_c$} In the case where A kills B, A dies with
+probability $p_c$.\\
+
+If A misses B, B will have to choose between shooting A or C.
+\begin{itemize}
+	\item if B shoots A, B dies with probability $p_b*p_c$ because C will
+		choose to shoot at the stronger A if he survives.
+	\item if B shoots C, B will survive with probability 1 because C will
+		choose to shoot A;
+\end{itemize}
+so B will shoot C, meaning that A will die with probability $(1-p_b)p_c$ if A
+misses B.\\
+
+So if A chooses to shoot B, A dies with probability 
+$p_ap_c + (1-p_a)(1-p_b)p_c$\\
+
+If A chooses to shoot C, A dies with probability $p_ap_b + (1-p_a)(1-p_b)p_c$
+which is bigger because $p_b > p_c$; so the terminal histories part of the 
+equilibria are \textbf{\{1, 2, 13, 9, 10\}}.
+
+\paragraph{If $p_a > p_c > p_b$}, the reasoning is the same as above, but 
+$p_c>p_b$ so the terminal histories part of the equilibrium are \textbf{\{14,
+15\} and the histories corresponding to \{13, 9, 10\} in the subtree not shown}.
+
+\paragraph{If $p_b > p_a > p_c$}, C will always choose to shoot B (in the
+situations leading to terminal histories 7, 8, 11 and 12).\\
+
+If A missed B and B chooses to shoot A, B will die with a probability of 
+$p_bp_c + (1-p_b)p_c = p_c$. If B chooses to shoot C instead, B will die with
+probability $(1-p_b)p_c$ which is smaller, so B will choose to shoot C.\\
+
+So if A chooses to shoot B, A will die with probability $p_ap_c$ because if A
+misses, B will shoot C, and if B misses, C will shoot B. However if A shoots C,
+A dies with a probability $p_ap_b > p_ap_c$, so the terminal histories are 
+\textbf{{\{1, 2, 13, 11, 12\}}}.
+
+\paragraph{If $p_b > p_c > p_a$}, the reasoning is the exactly the same as 
+above so the terminal histories are the same : \textbf{{\{1, 2, 13, 11, 12\}}}.
+
+\paragraph{If $p_c > p_b > p_a$}, C will always choose to shoot B. Using the
+reasoning above, it's easy to see that B will want to shoot C.\\
+
+So A will die with probability $p_ap_c$ if he chooses to shoot B and $p_ap_b$
+if he chooses to shoot C and $p_c>p_b$ so A will shoot C first and the terminal
+histories are \textbf{\{14, 15\} and the histories corresponding to \{13, 11,
+12\}}.
+
+\paragraph{If $p_c > p_a > p_b$}, C will always shoot A. Using the reasoning 
+from the first case, we know that B will shoot C because if he kills A, C
+will shoot B and if he misses C, C will always shoot A.\\
+
+So A will die with probability $p_ap_c + (1-p_b)p_c$ if he chooses to shoot B
+and $p_ap_b + (1-p_b)p_c$ if he chooses to shoot C. So A will prefer to shoot C
+because $p_c > p_b$. The terminal histories are \textbf{\{14, 15\} and the 
+histories corresponding to \{13, 9, 10\} in the subtree not shown} (the same
+as in the second case).
+
 \end{document}
